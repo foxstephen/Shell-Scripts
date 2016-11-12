@@ -1,0 +1,15 @@
+if [[ $# -eq 0 ]] ; then
+    echo 'Please enter filename for html template.'
+    exit 1
+fi
+
+echo "<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=\""utf-8\"">
+  <meta name=\""viewport\"" content=\""width=device-width\"">
+  <title>Insert Title Here</title>
+</head>
+<body>
+</body>
+</html>" > $1
