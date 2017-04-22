@@ -1,0 +1,7 @@
+#!/bin/bash
+if [[ $# -eq 0 ]] ; then
+    echo 'Please enter port number'
+    exit 1
+fi
+
+kill -9 `lsof -i TCP:$1 | awk '/LISTEN/{print $2}'`
