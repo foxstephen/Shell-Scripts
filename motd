@@ -1,0 +1,36 @@
+#!/bin/bash
+function print_weather() {
+	location="Dublin" # change this for other location
+	weather=$(python $HOME/bin/weather.py $location)
+	if [ $location != "" ]
+	then
+		echo $weather
+	else
+		echo "Weather report: Weather report cannot be given at this time."
+	fi
+}
+
+function print_time() {
+	now=$(date)
+	echo "\nDate: $now"
+}
+
+function print_greeting() {
+	echo Welcome $(whoami)!
+}
+
+function print_border() {
+	width=$(tput cols)
+
+	for i in {1..$(($width - 1))}
+	do
+   echo -n "_"
+	done
+	echo
+}
+print_border
+print_greeting
+print_weather
+print_time
+print_border
+
